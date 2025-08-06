@@ -12,6 +12,9 @@
   "peerDependencies": {
     "typescript": "^5"
   },
+  "scripts": {
+    "start": "bun run index.ts"
+  },
   "dependencies": {
     "axios": "^1.11.0",
     "cors": "^2.8.5",
