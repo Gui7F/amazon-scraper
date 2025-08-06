@@ -4,10 +4,10 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
   const resultsContainer = document.getElementById("results");
   const loading = document.getElementById("loading");
 
-  loading.innerHTML = `<div><img src="./public/assets/loading-4x-gray._CB485916919_.gif" alt=""></div>`;
-  
-  try {
-    const res = await fetch(`http://localhost:3000/api/scrape?keyword=${encodeURIComponent(keyword)}`);
+  loading.innerHTML = `<div><img src="./assets/loading-4x-gray._CB485916919_.gif" alt=""></div>`;
+  const url = `https://amazon-scraper-3bnr.onrender.com/api/scrape?keyword=${encodeURIComponent(keyword)}`
+  try { 
+    const res = await fetch(url);
     const data = await res.json();
 
     if(data){
