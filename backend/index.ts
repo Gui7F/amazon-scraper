@@ -2,9 +2,16 @@ import express from "express"
 import axios from "axios";
 import { JSDOM } from "jsdom";
 import type {Product} from './types/Products';
+import cors from 'cors'
 
 const app = express();
 const PORT = 3000;
+app.use(cors());
+const userAgents = [
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64)...",
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)...",
+  "Mozilla/5.0 (X11; Linux x86_64)...",
+];
 
 app.get("/api/scrape", async (req, res) => {
   const keyword = req.query.keyword as string;
@@ -15,17 +22,17 @@ app.get("/api/scrape", async (req, res) => {
 
   const searchURL = `https://www.amazon.com/s?k=${encodeURIComponent(keyword)}`;
 
-  try {
-    const response = await axios.get(searchURL, {
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Accept-Encoding": "gzip, deflate, br",
-        Referer: "https://www.amazon.com/",
-        Connection: "keep-alive",
-      },
-    });
+try {
+  const headers = {
+    "User-Agent": userAgents[Math.floor(Math.random() * userAgents.length)],
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
+    Referer: "https://www.amazon.com/",
+    Connection: "keep-alive",
+  };
+
+  const response = await axios.get(searchURL, { headers });
+
 
     const dom = new JSDOM(response.data);
     const document = dom.window.document;
