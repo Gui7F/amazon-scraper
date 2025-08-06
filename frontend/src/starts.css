@@ -1,0 +1,32 @@
+.star-rating {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #ccc;
+  unicode-bidi: bidi-override;
+}
+
+.star-rating::before {
+  content: "★★★★★";
+  letter-spacing: 2px;
+}
+
+.star-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #f8ce0b; /* cor da estrela preenchida */
+}
+
+.star-fill::before {
+  content: "★★★★★";
+  letter-spacing: 2px;
+}
+
+@media(max-width: 720px){
+   .star-rating{
+     font-size: 3em;
+   }
+}

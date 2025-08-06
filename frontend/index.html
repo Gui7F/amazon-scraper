@@ -2,16 +2,26 @@
   <head>
     <meta charset="UTF-8" />
     <title>Amazon Scraper</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/starts.css">
   </head>
+
   <body>
     <div class="container">
-      <h1>Amazon Product Search</h1>
-      <input type="text" id="keyword" placeholder="Enter keyword..." />
-      <button id="searchBtn">Search</button>
-      <div id="results"></div>
+      <div class="bgnavbar">
+        <nav class="navbar">
+          <div class="logo">
+            <img src="./assets/amazon-logo.svg" alt="logo" />
+          </div>
+          <div class="search">
+            <input type="text" id="keyword" placeholder="Search one product..." />
+            <button id="searchBtn"><img src="./assets/lupa.png" alt=""></button>
+          </div>
+        </nav>
+      </div>
+      <div class="product-grid" id="results"></div>
+      <div id="loading"></div>
     </div>
-
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
