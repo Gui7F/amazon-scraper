@@ -20,6 +20,9 @@ The application is fully responsive:
 **🖥️ Desktop View**  
 ![Desktop Screenshot](./assets/desktop.png)
 
+**💻 Laptop View**
+![Laptop Screenshot](./assets/laptop.png)
+
 **📱 Mobile View**  
 ![Mobile Screenshot](./assets/mobile.png)
 
