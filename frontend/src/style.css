@@ -190,3 +190,20 @@ button {
      width: 200px;
    }
 }
+
+@media(max-width:1400px){
+  .product-grid{
+    width: 80%;
+    grid-template-columns: repeat(4, 1fr);
+    padding-right: 100px;
+    margin: auto;
+  }
+
+  .product-card{
+    width: 250px;
+  }
+
+  .product-card > img{
+    width: 150px;
+  }
+}
