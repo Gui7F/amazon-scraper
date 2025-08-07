@@ -5,9 +5,9 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
   const loading = document.getElementById("loading");
 
   loading.innerHTML = `<div><img src="./assets/loading-4x-gray._CB485916919_.gif" alt=""></div>`;
-  const url = `https://amazon-scraper-3bnr.onrender.com/api/scrape?keyword=${encodeURIComponent(keyword)}`
+  // const url = `https://amazon-scraper-3bnr.onrender.com/api/scrape?keyword=${encodeURIComponent(keyword)}`
   //To run localy coments the url above end use the url bellow
-  // const url = `http://localhost:3000/api/scrape?keyword=headset${encodeURIComponent(keyword)}`
+  const url = `http://localhost:3000/api/scrape?keyword=${encodeURIComponent(keyword)}`
   try { 
     const res = await fetch(url);
     const data = await res.json();

@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 body {
-  margin: 0;
+  margin: auto;
   padding-top: 100px;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif; 
+  padding-bottom: 200px;
 }
 .container {
   max-width: 100%;
   margin: auto;
+  display: flex;
+  justify-content: center;
 }
 input {
   padding: 10px;
@@ -26,10 +29,6 @@ button {
 
 .error {
   color: red;
-}
-
-.product-card{
-  border: black solid 1px ;
 }
 
 .navbar {
@@ -132,7 +131,7 @@ button {
   display: flex;
 }
 
-@media(max-width:720px){
+@media(max-width:720px) {
    .product-grid{
      grid-template-columns: repeat(1, 1fr);
      width: 100%;
@@ -191,19 +190,24 @@ button {
    }
 }
 
-@media(max-width:1400px){
+@media (min-width: 800px) and (max-width: 1400px){
+ 
   .product-grid{
-    width: 80%;
     grid-template-columns: repeat(4, 1fr);
-    padding-right: 100px;
+    width: 90%;
     margin: auto;
+    padding-right: 0px;
+    gap: 50px;
   }
-
   .product-card{
-    width: 250px;
+    width:100%;
   }
 
-  .product-card > img{
-    width: 150px;
+  .product-card > h3{
+    font-size: 13px;
   }
+  .product-card > p{
+    font-size: 12px;
+  }
+
 }
